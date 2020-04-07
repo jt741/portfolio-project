@@ -53,9 +53,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="#">Twitter active tag makes it more bright<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Twitter <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="#">Resume</a>
-                <a class="nav-item nav-link" href="blogblog/">Blog</a>
+                <a class="nav-item nav-link active" href="#">Blog</a>
                 <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled tag makes it less grey</a>
               </div>
             </div>
@@ -63,47 +63,22 @@
     </header>
 
 <main role="main">
-
-  <section class="jumbotron text-center">
     <div class="container">
-      <h1>HEY ITS ME</h1>
-      <p class="lead text-muted">Woo hoo this is my first django website! omg </p>
-      <p>
-        <a href="mailto: jessyetu@gmail.com" class="btn btn-primary my-2">Email me</a>
-        <a href="#" class="btn btn-secondary my-2">Secondary action is grey bc secondary</a>
-      </p>
+        <h1 class="text-center pt-3">WELCOME TO THE BLOG PAGE</h1>
+        <br />
+        <br />
+        <h2>Latest posts</h2>
+        <hr />  <!-- This adds a line break thingy -->
+        {% for post in posts.all %}
+            <a href=''> <h3>{{post.title}}</h3> </a>
+            {{post.pub_date_pretty}}
+            <br />
+            <img class='img-fluid' src='{{post.image.url}}' height=200 width=200 />
+            <br />
+            <p>{{post.summary}}</p>
+        {%endfor%}
+
     </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row">
-
-        {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{job.image.url}}"/>
-            <div class="card-body">
-              <p class="card-text">{{job.summary}}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-
-          </div>
-
-        {% endfor %}
-        </div>
-        
-    </div>
-  </div>
-
 </main>
 
 <footer class="text-muted">
