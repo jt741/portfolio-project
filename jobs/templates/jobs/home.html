@@ -1,13 +1,16 @@
 
 <!doctype html>
 <html lang="en">
+
+{%load staticfiles%}
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Album example · Bootstrap</title>
+    <title>JESSYE TU</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -47,15 +50,15 @@
   <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Jessye Tu</a>
+            <a class="navbar-brand" href="{%url 'home'%}">Jessye Tu</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="#">Twitter active tag makes it more bright<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Resume</a>
-                <a class="nav-item nav-link" href="blogblog/">Blog</a>
+                <a class="nav-item nav-link active" href="https://twitter.com/explore">Twitter active tag makes it more bright<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{%static 'jury deferal.pdf'%}">Resume</a>
+                <a class="nav-item nav-link" href="{%url 'allblogs'%}">Blog</a>
                 <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled tag makes it less grey</a>
               </div>
             </div>
@@ -72,6 +75,7 @@
         <a href="mailto: jessyetu@gmail.com" class="btn btn-primary my-2">Email me</a>
         <a href="#" class="btn btn-secondary my-2">Secondary action is grey bc secondary</a>
       </p>
+      <img class='img-fluid' src="{%static 'photobridge.jpg'%}" height=400 width=400/>
     </div>
   </section>
 

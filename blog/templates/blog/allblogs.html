@@ -1,13 +1,14 @@
 
 <!doctype html>
 <html lang="en">
+    {%load staticfiles%}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Album example · Bootstrap</title>
+    <title>BLOG PAGE</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -47,15 +48,15 @@
   <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Jessye Tu</a>
+            <a class="navbar-brand" href="{%url 'home'%}">Jessye Tu</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link" href="#">Twitter <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Resume</a>
-                <a class="nav-item nav-link active" href="#">Blog</a>
+                <a class="nav-item nav-link" href="https://twitter.com/explore">Twitter active tag makes it more bright<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{%static 'jury deferal.pdf'%}">Resume</a>
+                <a class="nav-item nav-link active" href="{%url 'allblogs'%}">Blog</a>
                 <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled tag makes it less grey</a>
               </div>
             </div>
@@ -70,7 +71,7 @@
         <h2>Latest posts</h2>
         <hr />  <!-- This adds a line break thingy -->
         {% for post in posts.all %}
-            <a href=''> <h3>{{post.title}}</h3> </a>
+            <a href="{% url 'detail' post.id %}"> <h3>{{post.title}}</h3> </a>
             {{post.pub_date_pretty}}
             <br />
             <img class='img-fluid' src='{{post.image.url}}' height=200 width=200 />
