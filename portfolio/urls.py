@@ -26,6 +26,6 @@ urlpatterns = [
     path('', jobs.views.home, name='home'),
     path('blogblog/', include('blog.urls')),
     path('test/', jobs.views.test, name='test' ),
-    path('test2', jobs.views.mail, name='mail')
+    path('test/mail.php/', jobs.views.mail, name='mail')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
