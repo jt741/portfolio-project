@@ -8,3 +8,6 @@ def home(request):
 
 def test(request):
     return render(request, 'jobs/test.html')
+
+def mail(request):
+    return render(request, 'jobs/mail.php')
